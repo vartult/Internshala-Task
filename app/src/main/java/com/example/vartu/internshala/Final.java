@@ -9,6 +9,7 @@ import org.w3c.dom.Text;
 
 public class Final extends AppCompatActivity {
     TextView name;
+    mydbmanager2 mydbmanager2;
     SessionManagement session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,10 @@ public class Final extends AppCompatActivity {
         String user = session.getUserDetails();
         name.setText(user);
 
+        mydbmanager2 = new mydbmanager2(this);
+        mydbmanager2.open();
+
+        mydbmanager2.fetch(user,product);
 
 
 
