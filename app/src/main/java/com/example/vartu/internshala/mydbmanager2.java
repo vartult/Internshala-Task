@@ -39,18 +39,31 @@ public class mydbmanager2 {
 
     }
 
-    public ArrayList<workshop> fetch(String name, String data) {
-        ArrayList<workshop> newone=new ArrayList<>();
-        String[] columns = new String[] { wsdatabase.USER, wsdatabase.WORKNAME };
-        Cursor cursor = database.query(wsdatabase.TABLE_NAME_2, columns, "Column1 ="+name+" AND Column2 ="+data, null, null, null, null);
+    public int fetch(String name, String data) {
+        ArrayList<taken> newone=new ArrayList<>();
+        String query = "SELECT * FROM userwork2 WHERE USERID= '" + name+"' AND WORKSHOP= '"+ data+ "';";
+
+        Cursor  cursor = database.rawQuery(query,null);
+        if (cursor.moveToFirst())
+        {
+            return 1;
+
+        } else
+        {
+
+            return -1;
+        }
+    }
+
+
+    public ArrayList<String> fetch_all(String name) {
+        ArrayList<String> newone= new ArrayList<>();
+        String query = "SELECT * FROM userwork2 WHERE USERID= '" +name +"';";
+
+        Cursor  cursor = database.rawQuery(query,null);
         if (cursor.moveToFirst()) {
             do {
-                workshop notes = new workshop();
-                notes.setId(Integer.parseInt(cursor.getString(0)));
-                notes.setWorkshop(cursor.getString(1));
-                notes.setDescription(cursor.getString(2));
-                // Adding note to list
-                newone.add(notes);
+                newone.add(cursor.getString(2));
             } while (cursor.moveToNext());
         }
         return newone;

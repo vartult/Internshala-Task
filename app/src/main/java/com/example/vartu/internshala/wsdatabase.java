@@ -13,12 +13,12 @@ public class wsdatabase extends SQLiteOpenHelper {
     public static final String WS_COLUMN_DES = "DESCRIPTION";
 
     //second table
-    public static final String TABLE_NAME_1 = "userlist";
+    public static final String TABLE_NAME_1 = "userlist1";
     public static final String username = "USERID";
     public static final String password = "PASS";
 
     //third table
-    public static final String TABLE_NAME_2 = "userwork";
+    public static final String TABLE_NAME_2 = "userwork2";
     public static final String USER = "USERID";
     public static final String WORKNAME = "WORKSHOP";
 
