@@ -50,6 +50,10 @@ public class HomeFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_home, container, false);
         mydbmanager = new mydbmanager(getContext());
         mydbmanager.open();
+        /*mydbmanager.insert("android","qwertyuiop");
+        mydbmanager.insert("Python","asdfghjkl");
+        mydbmanager.insert("Web Development","zxcvbnm");
+        mydbmanager.insert("iOS","qwertyzxcvbnm");*/
 
         workshop=(ListView)view.findViewById(R.id.workshoplist);
         workshops = mydbmanager.fetch();
