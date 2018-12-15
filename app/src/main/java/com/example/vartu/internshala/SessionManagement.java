@@ -19,12 +19,8 @@ public class SessionManagement {
 
     private static final String IS_LOGIN = "IsLoggedIn";
 
-    // User name (make variable public to access from outside)
     public static final String KEY_NAME = "name";
 
-
-
-    // Constructor
     public SessionManagement(Context context){
         this._context = context;
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
