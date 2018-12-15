@@ -58,7 +58,7 @@ public class mydbmanager2 {
 
     public ArrayList<String> fetch_all(String name) {
         ArrayList<String> newone= new ArrayList<>();
-        String query = "SELECT * FROM userwork2 WHERE USERID= '" +name +"';";
+        String query = "SELECT * FROM userwork2 ;";
 
         Cursor  cursor = database.rawQuery(query,null);
         if (cursor.moveToFirst()) {
